@@ -1,0 +1,155 @@
+<div class="col-md-9">
+  <!-- <h5>All Categories</h5>    -->
+  <h5>Category List</h5>
+<div  style="width:100%;">
+<table class="table table-striped">
+  <thead >
+    <tr>
+      <th scope="col">Category Name</th>
+      <th scope="col">Description</th>  
+      <th scope="col">Image</th> 
+      <th scope="col">Status</th> 
+      <th scope="col">Actions</th> 
+       
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of productid">
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <img src='./assets/images/{{i.fileName}}'height="40px" width="40px">
+      <td>{{i.status}}</td> 
+      <button  class="btn btn-primary" data-toggle="modal" (click)="setCategory(i)" data-target="#exampleModal1">Update</button>
+      <button  class="btn btn-primary Details" data-toggle="modal" data-target="#exampleModal1">Details</button>
+      <button  class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3">Delete</button>
+    
+      <!-- <td><img src="../assets/images/edit.jpg" (click)="setCategory(i)" data-toggle="modal" data-target="#exampleModal1" height="40px" width="40px" ></td>    -->
+     </tr>
+    
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Add New Category
+</button>
+</div>
+</div>
+
+<div class="col ">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"  id="exampleModalLabel">Add a New Category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label>CategoryId</label>
+          <input type="text" placeholder="categoryid" [(ngModel)]="categoryId">
+          <br>
+          <label>Category Name</label>
+          <input type="text"placeholder="categoryname" [(ngModel)]="name">
+          <br>
+          
+          <label>Status</label>
+          <input type="text" placeholder="status" [(ngModel)]="status" >
+        </div>
+        <!-- <div class="modal-body" *ngIf="registerForm">
+          <form [formGroup]="registerForm"> -->
+            <!-- <div class="form-group"><label for="inputPassword">Category1d</label>
+              <input type="text" formControlName="cn" class="form-control" placeholder="Category1d" >
+              <div *ngIf="registerForm.controls.cn?.errors?.required && registerForm.controls.cn?.touched &&
+                submitted " class=" required"> required</div>
+            
+          </div> -->
+            <!-- <div class="form-group"><label for="inputPassword">Category Name</label>
+              <input type="text" formControlName="cn" class="form-control" placeholder="Categry Name" >
+              <div *ngIf="registerForm.controls.cn?.errors?.required && registerForm.controls.cn?.touched &&
+                submitted " class=" required"> required</div>
+            
+          </div>
+          <div class="form-group"><label for="inputPassword">Description</label>
+            <input type="text" formControlName="cn" class="form-control" placeholder="description" >
+            <div *ngIf="registerForm.controls.cn?.errors?.required && registerForm.controls.cn?.touched &&
+              submitted " class=" required"> required</div>
+          
+        </div> -->
+        
+      <!-- <div class="form-group"><label for="inputPassword">Status</label>
+        <input type="text" formControlName="cn" class="form-control" placeholder="status" >
+        <div *ngIf="registerForm.controls.cn?.errors?.required && registerForm.controls.cn?.touched &&
+          submitted " class=" required"> required</div>
+      
+    </div> -->
+    <!-- <input type="file" id="file" multiple (change)="getFileDetails($event)">   -->
+ <!-- <input type="file" id="file">   
+ <input type="text" class="model" [(ngModel)]="fileName"  placeholder="imageupload" >  
+      <button class="btn btn-primary" (click)="onupload(i)">Upload</button>   -->
+    <!-- <div class="box"> -->
+      <!-- <div class="js--image-preview"></div>
+      <div class="upload-options">
+        <label>Upload Image
+          <input type="file" class="image-upload" accept="image/*" />
+        </label>
+      </div>
+    </div> -->
+    
+          <!-- </form>
+        </div> -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="addCategory()" >Save </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  <div class="modal-body">
+    <div class="modal-content">
+      <div class="modal-header "><h6>Category Updation</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <label>CategoryName</label>
+    <input type="text" class="model" [(ngModel)]="name"  placeholder="name" >
+    <br>
+    <label>Description</label>
+    <input type="text" class="model" [(ngModel)]="description"  placeholder="description" >
+    <br>
+    <label>Image</label>
+    <input type="file" class="model" [(ngModel)]="fileName"  placeholder="imageupload" >
+    <br>
+    <label>Status</label>
+    <input type="text" class="model" [(ngModel)]="status"  placeholder="sttus" >
+    <div class="modal-footer ">
+      <button type="button" class="btn btn-danger update" (click)="updateCategory()">Save </button>
+      <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+    </div>
+  </div></div>
+</div>
+
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  <div class="modal-body">
+    <div class="modal-content">
+      <div class="modal-header "><h6>Are you sure???</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="modal-footer ">
+      <button type="button" class="btn btn-danger update" >Yes</button>
+      <button type="button" class="btn btn-white" data-dismiss="modal">No</button>
+    </div>
+  </div></div>
+</div>

@@ -1,0 +1,61 @@
+<div class="col-md-9">
+  <!-- <h5>All Categories</h5>    -->
+  <button  class="btn btn-success" data-toggle="modal"  data-target="#exampleModal">Add new Order</button>
+  
+  <h5>Order Details List</h5>
+<div  style="width:100%;">
+  
+
+<table class="table table-striped">
+  <thead >
+    <!--bindings={}-->==&0
+    <tr>
+      <th scope="col">OrderDetailId</th>
+      <th scope="col">OrderId</th>  
+      <th scope="col">ProductId</th> 
+      <th scope="col">Quantity</th> 
+      <th scope="col">Price</th> 
+       
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of productid  ">
+      <!-- <result [productid]="productid"></result> -->
+      <td>{{i?.orderDetailId}}</td>
+      <td>{{i?.orderId}}</td>
+      <td>{{i?.productId}}</td> 
+      <td>{{i?.quantity}}</td> 
+      <td>{{i?.price}}</td> 
+      <!-- <button  class="btn btn-primary" data-toggle="modal"  data-target="#exampleModal1">Update</button>
+      <button  class="btn btn-primary Details" data-toggle="modal" data-target="#exampleModal1">Details</button>
+      <button  class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3">Delete</button> -->
+    
+      <!-- <td><img src="../assets/images/edit.jpg" (click)="setCategory(i)" data-toggle="modal" data-target="#exampleModal1" height="40px" width="40px" ></td>    -->
+     </tr>
+    
+  </tbody>
+</table>
+  </div>
+</div>
+<!-- Modal body of add nw category button -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a new order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+        <label></label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger">Save changes</button>
+        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>

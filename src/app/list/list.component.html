@@ -1,0 +1,140 @@
+<!-- <div class="col sm-3">Products
+<form #product = "ngForm"  >
+    <input type = "text" name = "name" placeholder = "Name" [(ngModel)]="myname">{{myname}}
+   
+ </form> 
+</div> -->
+
+
+<div class="col-md-9">
+  <h2>All Users</h2>
+    
+<div  style="width:100%;">
+<table class="table table-striped">
+  <thead >
+    <tr>
+     
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Password</th>
+      <th scope="col">Role</th>
+      <th scope="col">Email</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of productid">
+     
+      <td>{{i.firstName}}</td>
+      <td>{{i.lastName}}</td>
+      <td>{{i.userName}}</td>
+      <td>{{i.password}}</td>
+      <td>{{i.role}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.city}}</td>
+      <td>{{i.state}}</td>
+      <td>{{i.country}}</td>
+      <!-- <td  type="button" class="btn "  (click)="setProduct(i)" data-toggle="modal" data-target="#exampleModal">
+        Update
+        
+      </td> -->
+      <div class="mt-1">
+      <button type="button"class="mb-1" (click)="setProduct(i)" data-toggle="modal" data-target="#exampleModal" >update</button>
+    
+      <button type="button"class="mt-1" >Delete</button></div>
+     </tr>
+    
+  </tbody>
+</table>
+<!-- <table>
+  <th>
+<tr>
+
+</tr>
+  </th>
+  <tbody>
+    <tr class="row">
+      <td class="col">{{i.userId}}</td>
+
+      <td class="col">{{i.firstName}}</td>
+      <td class="col">{{i.lastName}}</td>
+      <td  class="col">{{i.userName}}<td>
+         <img src="{{thumb_rain-on-the-window.jpg}}" alt="{{imageAlt}}" />  -->
+      <!-- <td class="col" >{{i.password}}</td>
+        <td class="col" >{{i.role}}</td> -->
+          <!-- <td class="col" >{{i.email}}</td>
+            <td class="col" >{{i.city}}</td>
+            <td class="col">{{i.state}}</td>
+              <td class="col">{{i.phone}}</td>
+              <td class="col">{{i.country}}</td>
+              <button type="button" class="btn btn-primary"  (click)="setProduct(i)" data-toggle="modal" data-target="#exampleModal">
+                Update
+              </button>
+             <button type="button" (click)="deleteProduct(i.id)">delete</button> 
+    </tr>
+  </tbody>
+</table> --> 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h5>User updation</h5> 
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>FirstName</label>
+        <input type="text" class="model" [(ngModel)]="firstName"  placeholder="firstname" >
+      <br>
+        <label>LastName</label>
+        <input type="text"  class="model"[(ngModel)]="lastName"  placeholder="lastName" >
+        <br>
+        <label>UserName</label>
+        <input type="text"  class="model"[(ngModel)]="userName"   placeholder="userName" >
+      <br>
+      <label>Password</label>&nbsp;
+      <input type="text" class="model" [(ngModel)]="password" placeholder="password" >
+      <br>
+      <label>Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="model" [(ngModel)]="email" placeholder="email" >
+      <br>
+      <label>City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="model" [(ngModel)]="city" placeholder="city" >
+      <br>
+      <label>State</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="model" [(ngModel)]="state" placeholder="state" >
+      <br>
+      <label>Country</label>&nbsp;
+      <input type="text" class="model" [(ngModel)]="country" placeholder="country" >
+      <br>
+      <label>Phone</label>&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="model" [(ngModel)]="phone" placeholder="phone" >
+      <br>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="updateProduct()" class="btn btn-secondary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+      <!-- <h5 >{{i.productId}}</h5>
+
+      <h6 >{{i.name}}</h6>
+      <p >{{i.description}}</p>
+      <p  >{{i.unitPrice}}</p>
+      
+      <p  >{{i.stockQuantity}}</p> -->
+    <!-- </div> -->
+  </div> 
+
+</div>
+
+
